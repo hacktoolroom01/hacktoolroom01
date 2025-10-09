@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Hacktooolroom01-Adapters</title>
+        <link rel="stylesheet" href="styletwo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        
+    </head>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // live search that checks the whole .tool text (heading + bullets + links)
+    window.searchTools = function() {
+    const input = document.getElementById('searchBox').value.toLowerCase().trim();
+    const tools = document.querySelectorAll('.tool');
+
+    tools.forEach(tool => {
+      // search the whole text content of the tool block
+      const text = tool.innerText.toLowerCase();
+      // show all if input is empty, otherwise match
+      tool.style.display = input === '' || text.includes(input) ? '' : 'none';
+    });
+  }
+});
+</script>
+
+<body>
+    <nav class="topnav">
+        <a href="index.html" class="nav-home">Home - Tools</a>
+        <a href="adapters.html" class="nav-adapters" >Adapters</a>
+    </nav>
+
+
+    <h1 class="first-h1">Hacktoolroom01-Adapters</h1>
+    <br>
+    <input type="text" id="searchBox" placeholder="Search tools..." onkeyup="searchTools()" style="padding:8px; width:100%; max-width:400px; margin-bottom:20px; border-radius:6px; border:1px solid #00d4ff; background:#0f1720; color:#cfe7ff;">
+
+    <br>
+
+    <!-- Wi‑Fi adapters using <div class="tool card"> -->
+<div class="tool card">
+    <h2 class="first-h2">Alfa AWUS036ACH — Dual‑band, good range</h3>
+    <img src="Alfa AWUS036ACH.jpg" class="img-Alfa1" alt="Alfa AWUS036ACH dual-band USB Wi‑Fi adapter" width="200" />
+    <div class="meta"><span class="tag">Alfa AWUS036ACH</span><span class="os">Linux • Windows</span></div>
+    <p><strong>What is it for?</strong> A dual‑band USB Wi‑Fi adapter (2.4 & 5 GHz) used to add strong wireless capability. Useful for packet capture or monitor mode in labs when drivers support it.</p>
+    <p><strong>Simple setup</strong>
+    <ul>
+      <li><strong>Windows:</strong> Plug in → install Alfa/Realtek drivers if needed.</li>
+      <li><strong>Linux / Kali:</strong> Plug in → install `rtl8812au` (or DKMS patched driver) → check `ip a` / `iwconfig`.</li>
+      <li><strong>VM:</strong> USB passthrough → install drivers in guest.</li>
+    </ul>
+    </p>
+    <p><strong>Quick checks:</strong> <code>ip a</code>, <code>iwconfig</code>, <code>airmon-ng</code>.</p>
+    <p style="color:#fca5a5;"><strong>Legal:</strong> Use only on networks you own or have permission to test.</p>
+  
+</div>
+
+<div class="tool">
+    <h2 class="second-h2">Alfa AWUS036NHA — Stable monitor mode & injection</h3>
+    <img src="Alfa AWUS036NHA.jpg" class="img-Alfa2" alt="Alfa AWUS036NHA USB Wi‑Fi adapter" width="200"/>
+    <div class="meta"><span class="tag">Alfa AWUS036NHA</span><span class="os">Linux • Windows</span></div>
+    <p><strong>What is it for?</strong> A USB Wi‑Fi adapter known for reliable monitor mode and packet injection support — great for wireless auditing in controlled labs.</p>
+    <p><strong>Simple setup</strong>
+    <ul>
+      <li><strong>Windows:</strong> Plug in → install drivers if needed.</li>
+      <li><strong>Linux / Kali:</strong> Kernel usually provides <code>ath9k_htc</code> → verify with <code>ip a</code> / <code>iwconfig</code> → use <code>airmon-ng</code>.</li>
+      <li><strong>VM:</strong> USB passthrough + drivers in guest.</li>
+    </ul>
+    </p>
+    <p><strong>Quick checks:</strong> <code>ip a</code>, <code>iwconfig</code>, try monitor mode in a safe lab.</p>
+    <p style="color:#fca5a5;"><strong>Legal:</strong> Only for authorized testing and learning.</p>
+  
+</div>
+
+<div class="tool">
+    <h2 class="third-h2">TP‑Link TL‑WN722N — Cheap & useful (v1 only)</h3>
+    <img src="TL-WN722N.jpg" class="img-TPLink" alt="TP‑Link TL‑WN722N USB Wi‑Fi adapter"  width="200"/>
+    <div class="meta"><span class="tag">TP‑Link TL‑WN722N</span><span class="os">Linux • Windows</span></div>
+  
+    <p><strong>What is it for?</strong> A budget USB Wi‑Fi adapter. <strong>Note:</strong> only version <em>v1</em> (Atheros AR9271) reliably supports monitor mode and injection. v2/v3 are standard adapters.</p>
+    <p><strong>Simple setup</strong>
+    <ul>
+      <li>Check the version on the label (v1 = AR9271).</li>
+      <li><strong>Windows:</strong> Plug in → install TP‑Link drivers if needed.</li>
+      <li><strong>Linux / Kali (v1):</strong> <code>ath9k_htc</code> driver should work → verify with <code>lsusb</code> / <code>iwconfig</code>.</li>
+      <li><strong>VM:</strong> USB passthrough to guest + drivers there.</li>
+    </ul>
+    </p>
+    <p><strong>Quick checks:</strong> <code>lsusb</code> (look for AR9271), <code>iwconfig</code>, <code>airmon-ng</code>.</p>
+    <p style="color:#fca5a5;"><strong>Legal:</strong> Use only in your lab or with explicit permission.</p>
+  
+</div>
+
+
+
+
+
+
+    
+  <h2>My instagram:</h2>
+      <a href="https://www.instagram.com/muro.rma" target="_blank">
+        <img src="OIP.webp" title="Instagram Profile" class="img-insta" width="50">
+      </a>
+
+
+</body>
+</html>
