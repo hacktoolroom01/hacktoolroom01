@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hacktoolroom01</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="hacktoolroom01.png.png">
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // live search that checks the whole .tool text (heading + bullets + links)
+  window.searchTools = function() {
+    const input = document.getElementById('searchBox').value.toLowerCase().trim();
+    const tools = document.querySelectorAll('.tool');
+
+    tools.forEach(tool => {
+      // search the whole text content of the tool block
+      const text = tool.innerText.toLowerCase();
+      // show all if input is empty, otherwise match
+      tool.style.display = input === '' || text.includes(input) ? '' : 'none';
+    });
+  }
+});
+</script>
+
+
+
+
+<body>
+
+    <nav class="topnav">
+        <a href="index.html" class="nav-home">Home - Tools</a>
+        <a href="adapters.html" class="nav-adapters" >Adapters</a>
+    </nav>
+
+
+    <h1 class="first-h1">Hacktoolroom01</h1>
+    <h4 class="first-h4">(The page of Cybersecurity tools.)</h4>
+    <a href="https://www.buymeacoffee.com/hacktoolroom" target="_blank">
+        <button class="coffe-button">☕ Buy Me a Coffee</button>
+    </a>
+    <br>
+    <br>
+
+
+    <input type="text" id="searchBox" placeholder="Search tools..." onkeyup="searchTools()" style="padding:8px; width:100%; max-width:400px; margin-bottom:20px; border-radius:6px; border:1px solid #00d4ff; background:#0f1720; color:#cfe7ff;">
+
+    <br>
+    <div class="tool">
+        <h2 class="first-h2">Kali Linux</h2>
+        <a  href="https://www.kali.org/" target="_blank">
+            <img src="notebook-kali-2024.1.jpg" title="Kali Linux" class="img-kali" alt="Kali Linux screenshot" width="400">
+        </a>
+        <ul class="first-ul">
+            <li>Kali Linux — a Debian-based penetration-testing distro packed with hundreds of security tools (Nmap, Metasploit, Wireshark, Aircrack-ng, etc.).</li>     
+            <li>Legal note: For learning & lab use only. Use on VMs or networks you own/have permission to test.</li>
+            <li>If you want to download <a href="https://www.kali.org" target="_blank" rel="noopener" title="Kali Linux Webpage">click here!</a></li>
+            <li>Keep your system up to date — run sudo apt update && sudo apt full-upgrade -y regularly</li>
+            <li>Install tool groups with Kali metapackages (e.g., kali-linux-default, kali-linux-wireless) to get focused tool sets</li>
+            <li>Learn with labs (<a href="https://www.tryhackme.com" title="Tryhackme" target="_blank"> TryHackMe </a>
+             /<a href="https://www.hackthebox.com" title="HackTheBox" target="_blank" >Hack The Box</a>),
+              Kali docs, and community guides — practice in isolated environments only.</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2 class="second-h2">Burp Suite</h2>
+        <a  href="https://portswigger.net/" target="_blank">
+            <img src="burpsuite.png" title="BurpSuite" class="img-burp" alt="Burp Suite logo" width="350">
+            </a>
+        <ul class="second-ul">
+            <li>Burp Suite — web-app security toolkit for intercepting, inspecting, and modifying HTTP(S) traffic.</li>
+            <li>Community (free) for manual testing; Professional/Enterprise (paid) for automated scans and advanced features.</li>
+            <li>Key tools: Proxy (intercept), Repeater (resend/tweak), Intruder (fuzz/bruteforce), Scanner (automated vuln scans).</li>
+            <li>Typical setup: run Burp, point browser proxy to 127.0.0.1:8080 (use FoxyProxy to switch easily).</li>
+            <li>Install on Kali: use package manager or download from PortSwigger for latest version.</li>
+            <li>Great for learning web pentesting — but only test sites you own or have permission to test.</li>
+            <li>Pro tip: save interesting requests to Repeater or Sequencer for deeper manual analysis.</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2 class="third-h2">Nmap</h2>
+        <a href="https://nmap.org/" target="_blank">
+            <img src="Nmap.png" title="Nmap" class="img-nmap" alt="Nmap Logo" width="400">
+        </a>
+        <ul class="third-ul">
+            <li>Nmap — a powerful network scanning tool used to discover hosts, open ports, and services on a network.</li>
+            <li>Can detect OS types, versions, and running services; great for mapping and auditing networks.</li>
+            <li>Supports multiple scan types: TCP SYN scan (-sS), UDP scan (-sU), ping scan (-sn), and more.</li>
+            <li>You can use Nmap on Kali Linux or any Linux distro , Windows/macOS too.</li>
+            <li>Always scan networks you own or have permission to test — unauthorized scanning is illegal.</li>
+            <li>Can combine with other tools like Zenmap (GUI) or scripts (--script) for vulnerability enumeration.</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2 class="fourth-h2">Metasploit</h2>
+        <a href="https://www.metasploit.com/" target="_blank">
+            <img src="metasploit.png" title="Metasploit" class="img-metasploit" alt="Metasploit Logo" width="400">
+        </a>
+        
+        <ul class="fourth-ul">
+            <li>Metasploit — a powerful exploitation framework used by security pros to develop, test, and run exploits against vulnerable systems.</li>
+            <li>Contains thousands of modules: exploits, payloads, auxiliary (scanners/fuzzers), and post‑exploitation tools.</li>
+            <li>Meterpreter is a popular payload that gives an interactive post‑exploit shell for advanced testing and modules</li>
+            <li>Comes as the open-source Metasploit Framework and a paid Metasploit Pro with extra automation and reporting.</li>
+            <li>Often used in labs and pentesting to validate vulnerabilities — useful for creating reproducible tests and demos.</li>
+            <li>Included in Kali Linux by default (or installable via package manager); also available from <a href="https://www.rapid7.com" title="Rapid7" target="_blank">Rapid7</a>.</li>
+            <li>Always use Metasploit only on systems you own or have explicit permission to test — unauthorized exploitation is illegal.</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2 class="fifth-h2">Wireshark</h2>
+        <a href="https://www.wireshark.org/" target="_blank">
+            <img src="wireshark.webp" title="Wireshark" class="img-wireshark" alt="Wireshark Logo" width="400" >
+        </a>
+
+        <ul class="fifth-ul">
+            <li> Wireshark — a network protocol analyzer that captures and displays packets in real time for deep traffic inspection.</li>
+            <li> Great for troubleshooting, learning protocols (TCP/IP, HTTP, DNS), and analyzing captures (.pcap/.pcapng).</li>
+            <li> Use <strong>capture filters</strong> (set before capture) to limit recordings and <strong>display filters</strong> (after capture) to focus on specific traffic (e.g., <code>http</code>, <code>ip.addr==1.2.3.4</code>).</li>
+            <li> Works on Linux/Windows/macOS; on some OSes you need elevated privileges to capture live traffic.</li>
+            <li> Save captures to <code>.pcap</code> and share with teammates or import into other tools for analysis.</li>
+            <li> Powerful features: packet reassembly, protocol decoding, follow TCP stream, statistics, and custom dissectors.</li>
+            <li> Always capture only on networks you own or have permission to analyze — intercepting other people’s traffic can be illegal and invade privacy.</li>
+            <li> Pro tip: use capture filters to reduce noise (e.g., <code>port 80 or port 443</code>) and learn display filters — they speed up analysis.</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2 class="sixth-h2">Hashcat</h2>
+        <a href="https://hashcat.net/hashcat" target="_blank">
+            <img src="Hashcat.avif" title="Hashcat" class="img-hashcat" alt="Hashcat Logo" width="400">
+        </a>
+
+        <ul class="sixth-ul">
+            <li>Hashcat — a fast, GPU-accelerated password-recovery tool used to crack password hashes for recovery and security testing</li>
+            <li>Supports many hash types (MD5, NTLM, bcrypt, etc.) and multiple attack modes (dictionary, combinator, mask, rule-based).</li>
+            <li>Best used with a good GPU — dramatically faster than CPU-based cracking.</li>
+            <li>Common workflow: export hashes from your own test systems, then run Hashcat in a controlled lab to check password strength.</li>
+            <li>Example (conceptual): hashcat -m <hash-type> -a <mode> hashes.txt wordlist.txt — replace placeholders and only run on hashes you own.</li>
+            <li>Pro tip: use rule files and masks to simulate realistic password patterns (helps assess real-world password strength).</li>
+            <li>Always ethical: only test passwords you own or have permission to audit.</li>
+
+        </ul>
+    </div>
+        
+    <div class="tool">
+        <h2 class="seventh-h2">Hydra</h2>
+        <a href="https://www.thc.org" target="_blank">
+            <img src="hydra.jpg" title="Hydra" class="img-hydra" alt="Hydra Logo" width="400">
+        </a>
+
+        <ul class="seventh-ul">
+            <li>Hydra — fast network login tester for services like SSH, FTP, HTTP, and more.</li>
+            <li>Used to validate lockouts and rate-limiting in controlled environments (lab-only).</li>
+            <li>Example (lab-only): <code>hydra -L users.txt -P passwords.txt ssh://127.0.0.1</code>.</li>
+            <li>Always test only on systems you own or have explicit permission to audit.</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+
+    <h2>My instagram:</h2>
+    <a href="https://www.instagram.com/muro.rma" target="_blank">
+        <img src="OIP.webp" title="Instagram Profile" class="img-insta" width="50">
+    </a>
+    
+</body>
+
+
+
+</html>
